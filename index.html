@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JCard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section>
+        <h1>JCard</h1>
+        <ul>
+            <li>
+                <h3>Header</h3>
+                <span></span>
+                <label for="Card-Name">Card Name</label>
+                <input type="text" name="Card-Name" id="Card-Name">
+                <label for="Right-Side">Right Side Text</label>
+                <input type="text" name="Right-Side" id="Right-Side">
+            </li>
+            <li>
+                <h3>Top-Center</h3>
+                <span></span>
+                <label for="Image">Image</label>
+                <input type="file" name="Image" id="Image">
+                <label for="Image-Caption">Caption</label>
+                <input type="text" name="Image-Caption" id="Image-Caption">
+                <label for="Center-Caption">Center the caption?</label>
+                <input type="checkbox" name="Center-Caption" id="Center-Caption">
+            </li>
+            <li>
+                <h3>Bottom-Center</h3>
+                <span></span>
+                <label for="Card-Text">Card Text</label>
+                <input type="text" name="Card-Text" id="Card-Text">
+            </li>
+            <li>
+                <h3>Footer</h3>
+                <span></span>
+                <label for="Footer-Text">Footer Text</label>
+                <input type="text" name="Footer-Text" id="Footer-Text">
+            </li>
+            <li>
+                <h3>Colors</h3>
+                <span></span>
+                <label for="TextColor">Text Color</label>
+                <input type="color" name="TextColor" id="TextColor">
+                <label for="BorderColor">Border Color</label>
+                <input type="color" name="BorderColor" id="BorderColor" value="#ffff00">
+                <label for="BackgroundColor">Background Color</label>
+                <input type="color" name="BackgroundColor" id="BackgroundColor" value="#c3c3c3">
+            </li>
+            <li>
+                <h3>Font</h3>
+                <span></span>
+                <label for="FontCSS">Font in CSS</label>
+                <input type="text" name="FontCSS" id="FontCSS">
+
+            </li>
+        </ul>
+        <input type="button" value="Build Card Image" id="BuildCardButton">
+    </section>
+    <section>
+        <p>Canvas is set for a 1.5in by 2.5in card at 300dpi, so 450x750</p>
+        <canvas width="450" height="750" id="canvas"></canvas>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>

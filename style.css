@@ -1,0 +1,22 @@
+* {
+    color: #051533;
+    background-color: #26f;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    align-items: center;
+    justify-content: space-around;
+    border-color: #136 solid;
+}
+li {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    width: 300px;
+}
+
+input {
+    background-color: #fff;
+}
