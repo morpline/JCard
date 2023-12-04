@@ -9,22 +9,23 @@
 <body>
     <section>
         <h1>JCard</h1>
+        <img src="./yarn.png" alt="" id="imageHidden" style="display: none;">
         <ul>
             <li>
                 <h3>Header</h3>
                 <span></span>
                 <label for="Card-Name">Card Name</label>
-                <input type="text" name="Card-Name" id="Card-Name">
+                <input type="text" name="Card-Name" id="Card-Name" value="Pile O' Darts">
                 <label for="Right-Side">Right Side Text</label>
-                <input type="text" name="Right-Side" id="Right-Side">
+                <input type="text" name="Right-Side" id="Right-Side" value="40">
             </li>
             <li>
                 <h3>Top-Center</h3>
                 <span></span>
                 <label for="Image">Image</label>
-                <input type="file" name="Image" id="Image">
+                <input type="file" name="Image" id="Image" accept="image/png, image/jpeg">
                 <label for="Image-Caption">Caption</label>
-                <input type="text" name="Image-Caption" id="Image-Caption">
+                <input type="text" name="Image-Caption" id="Image-Caption" value="Constant - Toy Weapon">
                 <label for="Center-Caption">Center the caption?</label>
                 <input type="checkbox" name="Center-Caption" id="Center-Caption">
             </li>
@@ -32,13 +33,13 @@
                 <h3>Bottom-Center</h3>
                 <span></span>
                 <label for="Card-Text">Card Text</label>
-                <input type="text" name="Card-Text" id="Card-Text">
+                <textarea name="Card-Text" id="Card-Text" cols="43" rows="14">Cannot be destroyed by the affects of your opponent's cards.</textarea>
             </li>
             <li>
                 <h3>Footer</h3>
                 <span></span>
                 <label for="Footer-Text">Footer Text</label>
-                <input type="text" name="Footer-Text" id="Footer-Text">
+                <input type="text" name="Footer-Text" id="Footer-Text" value="Copyright 2023 Morpline">
             </li>
             <li>
                 <h3>Colors</h3>
@@ -54,15 +55,18 @@
                 <h3>Font</h3>
                 <span></span>
                 <label for="FontCSS">Font in CSS</label>
-                <input type="text" name="FontCSS" id="FontCSS">
+                <input type="text" name="FontCSS" id="FontCSS" value="monospace">
 
             </li>
         </ul>
-        <input type="button" value="Build Card Image" id="BuildCardButton">
+        <div class="button">
+            <input type="button" value="Build Card Image" id="BuildCardButton">
+
+        </div>
     </section>
     <section>
-        <p>Canvas is set for a 1.5in by 2.5in card at 300dpi, so 450x750</p>
-        <canvas width="450" height="750" id="canvas"></canvas>
+        <p>Canvas is set for a 2.5 by 3.5in card at 300dpi, so 750x1050</p>
+        <canvas width="750" height="1050" id="canvas"></canvas>
     </section>
     <script src="script.js"></script>
 </body>
