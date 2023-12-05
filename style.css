@@ -6,13 +6,14 @@ body {
     overflow-x: hidden;
     background-color: #26f;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100vw;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
     border-color: #136 solid;
 }
-li {
+li , .top{
     display: grid;
     grid-template-columns: 1fr 2fr;
     width: 750px;
@@ -28,6 +29,7 @@ input {
 
 section, h1,  h3, label, li, ul, span, p {
     background-color: #40a0ff;
+    /* height: 100%; */
 }
 
 .button {
@@ -44,3 +46,4 @@ section, h1,  h3, label, li, ul, span, p {
     height: 313px;
     resize: none;
 }
+

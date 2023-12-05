@@ -8,7 +8,11 @@
 </head>
 <body>
     <section>
-        <h1>JCard</h1>
+        <div class="top">
+            <h1>JCard</h1>
+            <p>Copyright 2023 Morpline</p>
+
+        </div>
         <img src="./yarn.png" alt="" id="imageHidden" style="display: none;">
         <ul>
             <li>
@@ -34,6 +38,10 @@
                 <span></span>
                 <label for="Card-Text">Card Text</label>
                 <textarea name="Card-Text" id="Card-Text" cols="43" rows="14">Cannot be destroyed by the affects of your opponent's cards.</textarea>
+                <label for="TextAreaChars">Number of characters per line</label>
+                <input type="range" name="TextAreaChars" id="TextAreaChars" value="43" min="20" max="100">
+                <span></span>
+                <span id="TextAreaDisplay">43</span>
             </li>
             <li>
                 <h3>Footer</h3>

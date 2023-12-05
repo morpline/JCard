@@ -5,6 +5,9 @@ const Imsage = document.getElementById("Image");
 const ImageCaption = document.getElementById("Image-Caption");
 const CenterCaption = document.getElementById("Center-Caption");
 const CardText = document.getElementById("Card-Text");
+const TextAreaChars = document.getElementById("TextAreaChars");
+const TextAreaDisplay = document.getElementById("TextAreaDisplay");
+
 const FooterText = document.getElementById("Footer-Text");
 const TextColor = document.getElementById("TextColor");
 const BorderColor = document.getElementById("BorderColor");
@@ -39,7 +42,7 @@ async function buildCardImage () {
     ctx.fillText(CardName.value,20,70,600);
 
     ctx.textAlign = "right";
-    ctx.fillText(RightSide.value,670,70,60);
+    ctx.fillText(RightSide.value,730,70,80);
 
     ctx.textAlign = "left";
 
@@ -52,23 +55,46 @@ async function buildCardImage () {
     setTimeout(()=>{
       ctx.drawImage(imageHidden,30,80,690,400);
 
-    },300);
+    },100);
 
     ctx.font = `30px ${FontCSS.value}`;
 
 
     if(CenterCaption.checked) {
       ctx.textAlign = "center";
+      ctx.fillText(ImageCaption.value,375,510,720);
+    } else {
+      ctx.fillText(ImageCaption.value,30,510,720);
     }
-    ctx.fillText(ImageCaption.value,30,510,720);
 
     //Center
     ctx.textAlign = "left";
     let ct = CardText.value;
     // ctx.fillText(CardText.value,30,540,720);
-    for (let index = 0; (index < ct.length && index < 602); index++) {
+    // for (let index = 0; (index < ct.length && index < 602); index++) {
+    let index = 0;
+    let locationindex = 0;
+    let tempLine = "";
+    let lineWidth = TextAreaChars.value;
+    while (index < ct.length && index < 602) {
       const element = ct[index];
-      ctx.fillText(element,30+(index%43)*15,570+(Math.floor(index/43))*30);
+      if(element == "\n" || tempLine.length == lineWidth) {
+        locationindex = (Math.floor(locationindex/lineWidth)+1)*lineWidth;
+        ctx.fillText(tempLine,30,570+(Math.floor(locationindex/lineWidth))*30, 720);
+        tempLine="";
+        // index++;
+      } else {
+        tempLine+=element;
+
+      }
+      locationindex++;
+      index++;
+    }
+    if(tempLine) {
+      locationindex = (Math.floor(locationindex/lineWidth)+1)*lineWidth;
+
+      ctx.fillText(tempLine,30,570+(Math.floor(locationindex/lineWidth))*30, 720);
+
     }
 
     //Footer
@@ -79,5 +105,7 @@ async function buildCardImage () {
 }
 
 // buildCardImage();
-
+TextAreaChars.addEventListener("change",()=>{
+  TextAreaDisplay.innerText = TextAreaChars.value;
+})
 BuildCardButton.addEventListener("click",buildCardImage);
